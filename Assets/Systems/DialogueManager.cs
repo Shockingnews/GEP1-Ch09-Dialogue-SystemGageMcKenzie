@@ -1,18 +1,31 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+    
+    public TMP_Text dialogueText;
+
+    [SerializeField] private GameObject dialogueImg;
+    [SerializeField] GameObject player;
+    private PlayerMovementController controller;
+
     private Queue<string> sentences;
 
     private void Awake()
     {
         sentences = new Queue<string>();
+        controller = player.GetComponent<PlayerMovementController>();
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
+        dialogueImg.SetActive(true);
+        controller.enabled = false;
+
         Debug.Log("d");
 
         sentences.Clear();
@@ -30,8 +43,17 @@ public class DialogueManager : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
+            EndDialogue();
             return;
 
         }
+
+        string sentence = sentences.Dequeue();
+        dialogueText.text = sentence;
+    }
+    void EndDialogue()
+    {
+        dialogueImg.SetActive(false);
+        controller.enabled = true;
     }
 }

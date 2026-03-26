@@ -8840,6 +8840,8 @@ MonoBehaviour:
     name: eee
     sentences:
     - ww
+    - wjehwkd
+    - fe
   manager: {fileID: 1787030418}
 --- !u!1 &1220462167
 GameObject:
@@ -10016,9 +10018,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1787030418}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: DisplayNextString
+        m_MethodName: DisplayNextSentence
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10304,6 +10306,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc77c516dfd4314fb32cc04e807df47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueText: {fileID: 1055774198}
+  dialogueImg: {fileID: 870597447}
+  player: {fileID: 631075048}
 --- !u!4 &1787030419
 Transform:
   m_ObjectHideFlags: 0
