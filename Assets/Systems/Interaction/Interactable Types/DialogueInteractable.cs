@@ -14,8 +14,21 @@ public class DialogueInteractable : MonoBehaviour, IInteractable
     public void Interact()
     {
         //FindObjectOfType<Dialogue
-        manager.StartDialogue(dialogue);
+        if (manager.inText == true)
+        {
+
+            Debug.Log("true");
+            manager.DisplayNextSentence();
+
+
+
+        }
+        else { manager.StartDialogue(dialogue); }
+            
         
+        //manager.text = false;
+
+
     }
 
 
